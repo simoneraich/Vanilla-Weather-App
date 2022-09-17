@@ -1,0 +1,76 @@
+img {
+  max-width: 30px;
+  margin-bottom: 15px;
+}
+
+h3,
+h4 {
+  text-align: right;
+  padding-right: 15px;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.container {
+  margin: 20px auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-app {
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  padding: 20px;
+  width: 560px;
+}
+
+.input-group {
+  width: 280px;
+}
+
+.currenttemp {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.5;
+  display: inline;
+  padding-left: 70px;
+}
+
+#celcius,
+#fahrenheit {
+  font-size: 12px;
+  position: relative;
+  top: -15px;
+  text-decoration: none;
+}
+
+.current-weather-img {
+  text-align: right;
+  font-size: 70px;
+  padding-left: 10px;
+  line-height: 1;
+  display: inline;
+}
+
+#opencode {
+  font-size: 12px;
+  padding-left: 20px;
+}
+
+#celcius,
+#fahrenheit {
+  font-size: 12px;
+  position: relative;
+  top: -15px;
+  color: black;
+}
