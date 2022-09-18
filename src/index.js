@@ -32,7 +32,7 @@ function searchingCity(event) {
   h3.innerHTML = cityInput.value;
 }
 
-let citySearch = document.querySelector("#city-search");
+let citySearch = document.querySelector("#search-form");
 citySearch.addEventListener("submit", searchingCity);
 
 function changetoC(event) {
