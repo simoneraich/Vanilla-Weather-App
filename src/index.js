@@ -25,28 +25,60 @@ function formatedTime(date) {
   return `${days[dayIndex]} ${hours}:${minutes}`;
 }
 
-function searchingCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  let h3 = document.querySelector("#current-city");
-  h3.innerHTML = cityInput.value;
+function showTemperature(response) {
+  document.querySelector("#current-city").innerHTML = response.data.name;
+  document.querySelector("#temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#current-city").innerHTML = response.data.name;
+  document.querySelector("#temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document
+    .querySelector("#current-weather-img")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  celciusTemp = response.data.main.temp;
 }
 
-let citySearch = document.querySelector("#search-form");
-citySearch.addEventListener("submit", searchingCity);
-
-function changetoC(event) {
-  event.preventDefault();
-  let shownTemp = document.querySelector("#temp");
-  shownTemp.innerHTML = 20;
+function searchingCity(city) {
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
 }
-let celciusTemp = document.querySelector("#celcius");
-celciusTemp.addEventListener("click", changetoC);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchingCity(city);
+}
 
 function changetoF(event) {
   event.preventDefault();
-  let shownTemp = document.querySelector("#temp");
-  shownTemp.innerHTML = 68;
+  let shownTemperature = document.querySelector("#temp");
+  let shownTempF = (celciusTemp * 9) / 5 + 32;
+  shownTemperature.innerHTML = Math.round(shownTempF);
 }
-let fahrenheitTemp = document.querySelector("#fahrenheit");
-fahrenheitTemp.addEventListener("click", changetoF);
+
+function changetoC(event) {
+  event.preventDefault();
+  let shownTemperature = document.querySelector("#temp");
+  shownTemperature.innerHTML = Math.round(celciusTemp);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let celciusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", changetoF);
+
+let celciusLink = document.querySelector("#celcius");
+celciusLink.addEventListener("click", changetoC);
+
+searchingCity("New York");

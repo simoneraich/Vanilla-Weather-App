@@ -9,6 +9,7 @@ ul {
   color: whitesmoke;
   text-align: left;
   padding-left: 15px;
+  margin: 2;
 }
 
 h3 {
@@ -18,13 +19,16 @@ h3 {
 h4 {
   font-size: 18px;
   font-weight: 400;
-  padding-top: 15px;
 }
 
 ul {
   list-style: none;
   font-size: 13px;
   font-weight: 400px;
+  padding-top: 15px;
+}
+li {
+  display: inline;
 }
 
 .container {
@@ -50,10 +54,13 @@ ul {
   display: inline;
 }
 
+.col-6 {
+  margin: 0px;
+}
+
 #search-button.col-3 {
   padding-left: 0;
 }
-
 #current-weather-display {
   padding-top: 50px;
 }
