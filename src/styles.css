@@ -58,6 +58,22 @@ li {
   margin: 0px;
 }
 
+.weather-forecast {
+  margin: 15px;
+  text-align: center;
+}
+
+.forecast-day {
+  font-size: 12px;
+}
+
+.forecast-temp {
+  font-size: 12px;
+}
+
+.forecast-min {
+  opacity: 0.7;
+}
 #search-button.col-3 {
   padding-left: 0;
 }
