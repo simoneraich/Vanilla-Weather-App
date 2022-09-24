@@ -63,10 +63,7 @@ li {
   text-align: center;
 }
 
-.forecast-day {
-  font-size: 12px;
-}
-
+.forecast-day,
 .forecast-temp {
   font-size: 12px;
 }
@@ -79,23 +76,18 @@ li {
 }
 #current-weather-display {
   padding-top: 50px;
+  text-align: right;
 }
-#celcius,
-#fahrenheit {
-  font-size: 12px;
+#celcius {
   position: relative;
-  top: -15px;
+  top: -16px;
+  font-size: 14px;
   text-decoration: none;
   color: whitesmoke;
 }
-#fahrenheit {
-  color: grey;
-}
 
 #current-weather-img {
-  max-width: 125px;
-  padding-right: 15px;
-  padding-left: 5px;
+  max-width: 200px;
   margin-bottom: 30px;
 }
 #opencode {

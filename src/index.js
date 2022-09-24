@@ -44,7 +44,7 @@ function displayForecast(response) {
             <div class="forecast-day">${formatDay(forecastDay.dt)}</div> 
             <img src="http://openweathermap.org/img/wn/${
               forecastDay.weather[0].icon
-            }@2x.png" alt="icon"/>
+            }@2x.png" width="45"/>
             <div class="forecast-temp">
               <span class="forecast-max">
                 ${Math.round(forecastDay.temp.max)}°
@@ -102,28 +102,7 @@ function handleSubmit(event) {
   searchingCity(city);
 }
 
-function changetoF(event) {
-  event.preventDefault();
-  let shownTemperature = document.querySelector("#temp");
-  let shownTempF = (celciusTemp * 9) / 5 + 32;
-  shownTemperature.innerHTML = Math.round(shownTempF);
-}
-
-function changetoC(event) {
-  event.preventDefault();
-  let shownTemperature = document.querySelector("#temp");
-  shownTemperature.innerHTML = Math.round(celciusTemp);
-}
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
-
-let celciusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", changetoF);
-
-let celciusLink = document.querySelector("#celcius");
-celciusLink.addEventListener("click", changetoC);
 
 searchingCity("New York");
